@@ -2,7 +2,10 @@ const {
   addition,
   subtraction,
   multiplication,
-  division
+  division,
+  modulo,
+  power,
+  squareRoot
 } = require("../calculator");
 
 describe("calculator basic operations", () => {
@@ -59,6 +62,52 @@ describe("calculator basic operations", () => {
 
     test("throws an error when dividing by zero", () => {
       expect(() => division(10, 0)).toThrow("Division by zero is not allowed.");
+    });
+  });
+
+  describe("modulo", () => {
+    test("matches the extended operations example for 5 % 2", () => {
+      expect(modulo(5, 2)).toBe(1);
+    });
+
+    test("returns the remainder of a division", () => {
+      expect(modulo(10, 3)).toBe(1);
+    });
+
+    test("throws an error when dividing by zero", () => {
+      expect(() => modulo(10, 0)).toThrow("Modulo by zero is not allowed.");
+    });
+  });
+
+  describe("power", () => {
+    test("matches the extended operations example for 2 ^ 3", () => {
+      expect(power(2, 3)).toBe(8);
+    });
+
+    test("raises the base to the given exponent", () => {
+      expect(power(2, 5)).toBe(32);
+    });
+
+    test("returns 1 when the exponent is zero", () => {
+      expect(power(9, 0)).toBe(1);
+    });
+  });
+
+  describe("squareRoot", () => {
+    test("matches the extended operations example for sqrt(16)", () => {
+      expect(squareRoot(16)).toBe(4);
+    });
+
+    test("returns the square root of a positive number", () => {
+      expect(squareRoot(49)).toBe(7);
+    });
+
+    test("returns zero when the input is zero", () => {
+      expect(squareRoot(0)).toBe(0);
+    });
+
+    test("throws an error for negative numbers", () => {
+      expect(() => squareRoot(-1)).toThrow("Square root of a negative number is not allowed.");
     });
   });
 });
