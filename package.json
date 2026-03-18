@@ -1,0 +1,13 @@
+{
+  "name": "calculator-cli",
+  "version": "1.0.0",
+  "description": "A Node.js CLI calculator supporting addition, subtraction, multiplication, division, modulo, power, and square root.",
+  "main": "src/calculator.js",
+  "scripts": {
+    "start": "node src/calculator.js",
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
